@@ -406,15 +406,14 @@ Mts.articles = {
 							imageURL = article.image,
 							url = article.url,
 							title = article.title;
-
 					if (room == 1) {
 						room = 'Кухня'
 					} else if (room == 2) {
 						room = 'Гостиная'
 					} else if (room == 3) {
-						room = 'Спальная комната'
+						room = 'Спальня'
 					} else if (room == 4) {
-						room = 'Ванная комната'
+						room = 'Ванная'
 					} else if (room == 5) {
 						room = 'Прихожая'
 					} else if (room == 6) {
@@ -432,6 +431,7 @@ Mts.articles = {
 				Mts.articles.showArticles();
 			},
 			error: function(json) {
+				console.log(articlesArray);
 				$('.articles-list').parent().parent().html('');
 			}
 		});
