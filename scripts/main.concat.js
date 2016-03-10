@@ -271,7 +271,7 @@ Mts.formsData = {
 		$.ajax({
 			type: 'GET',
 			// url: '/build/profile.json',
-			url: '/my/profile.json',
+			url: 'http://www.inmyroom.ru/my/profile.json',
 			dataType: 'json',
 			success: function(json) {
 				Mts.common.userId = json.id;
@@ -397,7 +397,7 @@ Mts.articles = {
 		$.ajax({
 			type: 'GET',
 			// url: 'http://mts.dev/build/mts_gpon.json',
-			url: '/static/api/mts_gpon.json',
+			url: 'http://www.inmyroom.ru/static/api/mts_gpon.json',
 			dataType: 'json',
 			success: function(json) {
 				var rooms = json.items,
