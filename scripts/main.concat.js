@@ -378,7 +378,7 @@ Mts.formsData = {
 							}
 						});
 					} else {
-						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fmts.inmyroom.ru%2F');
+						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fmtsazbukaremonta.inmyroom.ru%2F');
 					}
 				},
 				error: function(json) {
