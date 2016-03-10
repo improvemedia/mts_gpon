@@ -270,7 +270,6 @@ Mts.formsData = {
 	checkItUp: function() {
 		$.ajax({
 			type: 'GET',
-			// url: '/build/profile.json',
 			url: 'http://www.inmyroom.ru/my/profile.json',
 			dataType: 'json',
 			success: function(json) {
@@ -358,8 +357,7 @@ Mts.formsData = {
 
 			$.ajax({
 				type: 'GET',
-				//url: '/build/profile.json',
-				url: '/my/profile.json',
+				url: 'http://www.inmyroom.ru/my/profile.json',
 				dataType: 'json',
 				success: function(json) {
 					Mts.common.userId = json.id;
@@ -396,7 +394,6 @@ Mts.articles = {
 	getArticles: function() {
 		$.ajax({
 			type: 'GET',
-			// url: 'http://mts.dev/build/mts_gpon.json',
 			url: 'http://www.inmyroom.ru/static/api/mts_gpon.json',
 			dataType: 'json',
 			success: function(json) {
@@ -533,4 +530,3 @@ $( document ).ready(function() {
 $('.content-wrapper.grey .content .gpon-block').click(function(){
 	location.replace('http://gpon.mgts.ru/');
 });
-
