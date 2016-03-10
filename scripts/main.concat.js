@@ -395,6 +395,8 @@ Mts.formsData = {
 Mts.articles = {
 
 	getArticles: function() {
+		roomFilter = $('.flat-plan .selected').attr('data-room');
+		$('.articles-list').html('');
 		$.ajax({
 			type: 'GET',
 			url: 'http://www.inmyroom.ru/static/api/mts_gpon.json',
@@ -425,7 +427,9 @@ Mts.articles = {
 					};
 
 					articlesArray.push('<li class="article');
-					articlesArray.push(' filtered');
+					if(roomFilter == room){
+						articlesArray.push(' filtered');
+					};
 					articlesArray.push('" data-room=' + room + '>');
 					articlesArray.push('<a href="' + url + '">');
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
@@ -435,6 +439,7 @@ Mts.articles = {
 
 				$('.articles-list').html(articlesArray.join(''));
 				Mts.articles.showArticles();
+				console.log(1)
 			},
 			error: function(json) {
 				$('.articles-list').parent().parent().html('');
@@ -461,6 +466,8 @@ Mts.articles = {
 
 					if(filteredTotal > visibleTotal) {
 						$('.show-more').hide();
+					} else {
+						$('.show-more').show();
 					}
 				}
 			};
