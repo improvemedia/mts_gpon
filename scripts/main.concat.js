@@ -107,7 +107,7 @@ Mts.rooms = {
 		$('.article').removeClass('visible');
 		$('.article').removeClass('filtered');
 		setTimeout(function(){
-				Mts.articles.showArticles();
+				Mts.articles.getArticles();
 			}, 10)
 		$('html, body').animate({
 			scrollTop: $('.room-menu').offset().top - 59
@@ -133,7 +133,9 @@ Mts.rooms = {
 		$('.repairs-menu li:first').addClass('active');
 
 		Mts.rooms.roomTabsToggler(elem.attr('data-room'));
-		Mts.articles.showArticles();
+		setTimeout(function(){
+				Mts.articles.getArticles();
+		}, 10)
 	},
 
 	roomTabsToggler: function(elem) {
@@ -422,7 +424,9 @@ Mts.articles = {
 						room = 'Детская'
 					};
 
-					articlesArray.push('<li class="article" data-room=' + room + '>');
+					articlesArray.push('<li class="article');
+					articlesArray.push(' filtered');
+					articlesArray.push('" data-room=' + room + '>');
 					articlesArray.push('<a href="' + url + '">');
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
 					articlesArray.push('<span class="category">' + category + '</span>');
@@ -439,8 +443,6 @@ Mts.articles = {
 	},
 
 	showArticles: function() {
-		$('.article').removeClass('filtered, visible')
-
 		var counter = 0,
 				roomFilter = $('.flat-plan .selected').attr('data-room'),
 				filteredTotal = 0,
@@ -449,7 +451,6 @@ Mts.articles = {
 		$('.article').each(function(){
 			var room = $(this).attr('data-room');
 			if(roomFilter == room){
-				$(this).addClass('filtered');
 				filteredTotal = filteredTotal + 1;
 			};
 			if(! $(this).hasClass('visible') && counter < 3) {
@@ -470,7 +471,6 @@ Mts.articles = {
 		var t = this;
 
 		t.getArticles();
-		// t.showArticles();
 
 		$('.show-more').on('click', function(e) {
 			e.preventDefault();
