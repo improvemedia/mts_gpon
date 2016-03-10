@@ -439,7 +439,8 @@ Mts.articles = {
 	},
 
 	showArticles: function() {
-		$('.article').removeClass('filtered');
+		$('.article').removeClass('filtered, visible')
+
 		var counter = 0,
 				roomFilter = $('.flat-plan .selected').attr('data-room'),
 				filteredTotal = 0,
