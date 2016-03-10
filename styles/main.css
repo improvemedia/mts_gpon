@@ -448,7 +448,7 @@ body {
   .content-wrapper.grey .content h2 {
     margin: 50px 0 45px 0; }
   .content-wrapper.grey .content .gpon-block {
-    cursor: pointer;
+    /*cursor: pointer;*/
     height: 340px;
     overflow: hidden;
     background-image: url("../images/bg-gpon.jpg");
