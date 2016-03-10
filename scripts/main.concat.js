@@ -133,6 +133,7 @@ Mts.rooms = {
 		$('.repairs-menu li:first').addClass('active');
 
 		Mts.rooms.roomTabsToggler(elem.attr('data-room'));
+		Mts.articles.showArticles();
 	},
 
 	roomTabsToggler: function(elem) {
