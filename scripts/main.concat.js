@@ -278,7 +278,7 @@ Mts.formsData = {
 			success: function(json) {
 				Mts.common.userId = json.id;
 				if (json.is_logined)  {
-					if (localStorage.getItem('waitingToSave')) {
+					if (! localStorage.getItem('waitingToSave')) {
 						$.ajax({
 							type: 'POST',
 							url: 'http://inmyroom.grapheme.ru/set',
@@ -308,7 +308,6 @@ Mts.formsData = {
 									localStorage.removeItem('sessionData');
 									localStorage.setItem('sessionData', json.data);
 								}
-								console.log('qwe');
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
 								$.each(localObject.userRooms, function(i, v) {
 									var room = i;
