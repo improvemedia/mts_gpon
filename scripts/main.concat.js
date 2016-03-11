@@ -278,41 +278,60 @@ Mts.formsData = {
 			success: function(json) {
 				Mts.common.userId = json.id;
 				if (json.is_logined)  {
-					$.ajax({
-						type: 'POST',
-						url: 'http://inmyroom.grapheme.ru/get',
-						dataType: 'json',
-						data: {
-							user_id: Mts.common.userId,
-							// data: JSON.stringify(Mts.formsData.userData),
-						},
-						success: function(json) {
-							if (json.data) {
-								localStorage.removeItem('sessionData');
-								localStorage.setItem('sessionData', json.data);
+					if (localStorage.getItem('waitingToSave')) {
+						$.ajax({
+							type: 'POST',
+							url: 'http://inmyroom.grapheme.ru/set',
+							dataType: 'json',
+							data: {
+								user_id: Mts.common.userId,
+								data: encodeURIComponent(localStorage.getItem('sessionData'))
+							},
+							success: function(json) {
+								// console.log('success');
+							},
+							error: function() {
+								alert('Не удалось сохранить данные. Повторите попытку позднее.');
 							}
+						});
+						localStorage.removeItem('waitingToSave');
+					} else {
+						$.ajax({
+							type: 'POST',
+							url: 'http://inmyroom.grapheme.ru/get',
+							dataType: 'json',
+							data: {
+								user_id: Mts.common.userId,
+							},
+							success: function(json) {
+								if (json.data) {
+									localStorage.removeItem('sessionData');
+									localStorage.setItem('sessionData', json.data);
+								}
 
-							var localObject = JSON.parse(localStorage.getItem('sessionData'));
-							$.each(localObject.userRooms, function(i, v) {
-								var room = i;
-								var roomBlock = $('.planing-block [data-room="' + i + '"]');
-								$.each(v, function(i, v){
-									var repairBlock = roomBlock.find('.repairs-tab[data-repair="' + i + '"]');
+								var localObject = JSON.parse(localStorage.getItem('sessionData'));
+								$.each(localObject.userRooms, function(i, v) {
+									var room = i;
+									var roomBlock = $('.planing-block [data-room="' + i + '"]');
 									$.each(v, function(i, v){
-										if (repairBlock.find('p').eq(i).length > 0) {
-											repairBlock.find('p').eq(i).parent().find('.checkbox').prop('checked', true);
-										} else {
-											repairBlock.find('.new-checkbox').before('<div class="form-row"><input type="checkbox" class="checkbox" checked="checked"><p>'+v+' </p></div>');
-										}
-										var planingBlockHeight = $('.planing-block .repairs-tabs.active .repairs-tab.active').height();
-										$('.planing-block').animate({
-											height: planingBlockHeight
+										var repairBlock = roomBlock.find('.repairs-tab[data-repair="' + i + '"]');
+										$.each(v, function(i, v){
+											if (repairBlock.find('p').eq(i).length > 0) {
+												repairBlock.find('p').eq(i).parent().find('.checkbox').prop('checked', true);
+											} else {
+												repairBlock.find('.new-checkbox').before('<div class="form-row"><input type="checkbox" class="checkbox" checked="checked"><p>'+v+' </p></div>');
+											}
+											var planingBlockHeight = $('.planing-block .repairs-tabs.active .repairs-tab.active').height();
+											$('.planing-block').animate({
+												height: planingBlockHeight
+											});
 										});
 									});
-								});
-							})
-						},
-					});
+								})
+							},
+						});
+					}
+
 				} else {
 					var localObject = JSON.parse(localStorage.getItem('sessionData'));
 					$.each(localObject.userRooms, function(i, v) {
@@ -358,13 +377,11 @@ Mts.formsData = {
 		});
 
 		$('.toolbar .save').on('click', function() {
-
 			$.ajax({
 				type: 'GET',
 				url: 'http://www.inmyroom.ru/my/profile.json',
 				dataType: 'json',
 				success: function(json) {
-					console.log(json)
 					Mts.common.userId = json.id;
 					if (json.is_logined)  {
 						$.ajax({
@@ -383,6 +400,7 @@ Mts.formsData = {
 							}
 						});
 					} else {
+						localStorage.setItem('waitingToSave', true);
 						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fwww.inmyroom.ru%2Flanding%2Fmtsazbukaremonta');
 					}
 				},
