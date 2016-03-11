@@ -215,9 +215,7 @@ Mts.formsData = {
 						$(this).find('input').each(function(i){
 							var dataOption = $(this).parent('.form-row').find('p').first().text();
 							if(dataOption == undefined || dataOption == '' || dataOption == null) {
-console.log(dataOption)
 								dataOption = $(this).parent('.form-row').find('.text').val();
-								console.log(dataOption + '///')
 							}
 								if($(this).is(':checked')) {
 									t.userData.userRooms[dataRoom][dataRepair][i] = dataOption;
@@ -332,6 +330,9 @@ console.log(dataOption)
 									localStorage.setItem('sessionData', json.data);
 								}
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
+								if(! localObject) {
+									return
+								}
 								$.each(localObject.userRooms, function(i, v) {
 									var room = i;
 									var roomBlock = $('.planing-block [data-room="' + i + '"]');
@@ -356,6 +357,9 @@ console.log(dataOption)
 
 				} else {
 					var localObject = JSON.parse(localStorage.getItem('sessionData'));
+					if(! localObject) {
+						return
+					}
 					$.each(localObject.userRooms, function(i, v) {
 						var room = i;
 						var roomBlock = $('.planing-block [data-room="' + i + '"]');
@@ -374,6 +378,9 @@ console.log(dataOption)
 			},
 			error: function(json) {
 				var localObject = JSON.parse(localStorage.getItem('sessionData'));
+				if(! localObject) {
+					return
+				}
 				$.each(localObject.userRooms, function(i, v) {
 					var room = i;
 					var roomBlock = $('.planing-block [data-room="' + i + '"]');
