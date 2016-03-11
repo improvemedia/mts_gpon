@@ -284,7 +284,7 @@ Mts.formsData = {
 						dataType: 'json',
 						data: {
 							user_id: Mts.common.userId,
-							data: JSON.stringify(Mts.formsData.userData),
+							// data: JSON.stringify(Mts.formsData.userData),
 						},
 						success: function(json) {
 							if (json.data) {
@@ -364,6 +364,7 @@ Mts.formsData = {
 				url: 'http://www.inmyroom.ru/my/profile.json',
 				dataType: 'json',
 				success: function(json) {
+					console.log(json)
 					Mts.common.userId = json.id;
 					if (json.is_logined)  {
 						$.ajax({
@@ -382,7 +383,7 @@ Mts.formsData = {
 							}
 						});
 					} else {
-						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fmtsazbukaremonta.inmyroom.ru%2F');
+						// location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fmtsazbukaremonta.inmyroom.ru%2F');
 					}
 				},
 				error: function(json) {
