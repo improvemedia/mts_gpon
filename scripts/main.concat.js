@@ -87,7 +87,7 @@ Mts.common.init = function() {
 				$('.send-mail button').removeClass('disabled');
 			}
 		});
-		window.location.href = window.location.href + '/'
+
 		Mts.formsData.checkItUp();
 	};
 
@@ -308,7 +308,7 @@ Mts.formsData = {
 									localStorage.removeItem('sessionData');
 									localStorage.setItem('sessionData', json.data);
 								}
-
+								console.log('qwe');
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
 								$.each(localObject.userRooms, function(i, v) {
 									var room = i;
