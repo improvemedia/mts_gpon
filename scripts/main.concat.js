@@ -284,6 +284,7 @@ Mts.formsData = {
 						dataType: 'json',
 						data: {
 							user_id: Mts.common.userId,
+							data: JSON.stringify(Mts.formsData.userData),
 						},
 						success: function(json) {
 							if (json.data) {
