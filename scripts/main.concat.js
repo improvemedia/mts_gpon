@@ -87,7 +87,7 @@ Mts.common.init = function() {
 				$('.send-mail button').removeClass('disabled');
 			}
 		});
-		window.location.href = window.location.href + '123'
+		window.location.href = window.location.href + '/'
 		Mts.formsData.checkItUp();
 	};
 
