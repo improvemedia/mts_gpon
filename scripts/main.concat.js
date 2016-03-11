@@ -88,6 +88,8 @@ Mts.common.init = function() {
 			}
 		});
 
+		console.log(123123);
+
 		Mts.formsData.checkItUp();
 	};
 
