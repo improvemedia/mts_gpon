@@ -214,7 +214,7 @@ Mts.formsData = {
 
 						$(this).find('input').each(function(i){
 							var dataOption = $(this).parent('.form-row').find('p').first().text();
-							if(dataOption == undefined || dataOption == '') {
+							if(dataOption == undefined || dataOption == '' || dataOption == null) {
 								dataOption = $(this).parent('.form-row').find('.text').val();
 							}
 								if($(this).is(':checked')) {
