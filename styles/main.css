@@ -1004,7 +1004,8 @@ display: none}
     font-size: 40px;
     text-align: center;
     color: #000;
-    vertical-align: top; }
+    vertical-align: top;
+	cursor: pointer;}
     .toolbar li i:before {
       font-style: normal;
       font-family: 'icomoon'; }
