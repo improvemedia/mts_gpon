@@ -289,6 +289,9 @@ Mts.formsData = {
 							},
 							success: function(json) {
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
+								if(! localObject) {
+									return
+								}
 								$.each(localObject.userRooms, function(i, v) {
 									var room = i;
 									var roomBlock = $('.planing-block [data-room="' + i + '"]');
