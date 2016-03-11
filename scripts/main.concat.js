@@ -88,8 +88,6 @@ Mts.common.init = function() {
 			}
 		});
 
-		console.log(123123);
-
 		Mts.formsData.checkItUp();
 	};
 
@@ -403,7 +401,7 @@ Mts.formsData = {
 						});
 					} else {
 						localStorage.setItem('waitingToSave', true);
-						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fwww.inmyroom.ru%2Flanding%2Fmtsazbukaremonta');
+						location.replace('http://www.inmyroom.ru/registration?referer=http%3A%2F%2Fwww.inmyroom.ru%2Flanding%2Fmtsazbukaremonta?reload=true');
 					}
 				},
 				error: function(json) {
@@ -461,7 +459,7 @@ Mts.articles = {
 
 				$('.articles-list').html(articlesArray.join(''));
 				Mts.articles.showArticles();
-				console.log(1)
+
 			},
 			error: function(json) {
 				$('.articles-list').parent().parent().html('');
