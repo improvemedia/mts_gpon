@@ -278,7 +278,7 @@ Mts.formsData = {
 			success: function(json) {
 				Mts.common.userId = json.id;
 				if (json.is_logined)  {
-					if (! localStorage.getItem('waitingToSave')) {
+					if (localStorage.getItem('waitingToSave')) {
 						$.ajax({
 							type: 'POST',
 							url: 'http://inmyroom.grapheme.ru/set',
@@ -288,7 +288,25 @@ Mts.formsData = {
 								data: encodeURIComponent(localStorage.getItem('sessionData'))
 							},
 							success: function(json) {
-								// console.log('success');
+								var localObject = JSON.parse(localStorage.getItem('sessionData'));
+								$.each(localObject.userRooms, function(i, v) {
+									var room = i;
+									var roomBlock = $('.planing-block [data-room="' + i + '"]');
+									$.each(v, function(i, v){
+										var repairBlock = roomBlock.find('.repairs-tab[data-repair="' + i + '"]');
+										$.each(v, function(i, v){
+											if (repairBlock.find('p').eq(i).length > 0) {
+												repairBlock.find('p').eq(i).parent().find('.checkbox').prop('checked', true);
+											} else {
+												repairBlock.find('.new-checkbox').before('<div class="form-row"><input type="checkbox" class="checkbox" checked="checked"><p>'+v+' </p></div>');
+											}
+											var planingBlockHeight = $('.planing-block .repairs-tabs.active .repairs-tab.active').height();
+											$('.planing-block').animate({
+												height: planingBlockHeight
+											});
+										});
+									});
+								});
 							},
 							error: function() {
 								alert('Не удалось сохранить данные. Повторите попытку позднее.');
