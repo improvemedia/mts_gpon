@@ -466,20 +466,22 @@ Mts.articles = {
 					} else if (room == 2) {
 						room = 'Гостиная'
 					} else if (room == 3) {
-						room = 'Спальная комната'
+						room = 'Спальня'
 					} else if (room == 4) {
-						room = 'Ванная комната'
+						room = 'Ванная'
 					} else if (room == 5) {
 						room = 'Прихожая'
 					} else if (room == 6) {
 						room = 'Детская'
 					};
 
+
 					articlesArray.push('<li class="article');
 					if(roomFilter == room){
 						articlesArray.push(' filtered');
 					};
-					articlesArray.push('" data-room=' + room + '>');
+					console.log(room)
+					articlesArray.push('" data-room="' + room + '">');
 					articlesArray.push('<a href="' + url + '">');
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
 					articlesArray.push('<span class="category">' + category + '</span>');
