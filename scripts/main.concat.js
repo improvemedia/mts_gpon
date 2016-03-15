@@ -424,14 +424,12 @@ Mts.formsData = {
 							},
 							success: function(json) {
 								if(json.pdf) {
-                          function() {
                             var documentLink = json.pdf.replace('\\', '');
-                            $('body').append('<a id="urPdf" download="' + documentLink + '"></a>')
-                            setTimeout(function(){
+                            $('body').append('<a id="urPdf" download="' + documentLink + '"></a>');
+                            setTimeout(function() {
                               $('#urPdf').click();
                               $('#urPdf').remove();
                             },100);
-                          }
                         }
 							},
 							error: function() {
