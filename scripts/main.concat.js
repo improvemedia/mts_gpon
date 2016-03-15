@@ -425,10 +425,11 @@ Mts.formsData = {
 							success: function(json) {
 								if(json.pdf) {
                             var documentLink = json.pdf;
-                            $('body').append('<a id="urPdf" download="Азбука ремонта.pdf" href="' + documentLink + '"></a>');
+                            $('body').append('<a id="urPdf" download="Азбука ремонта" href="' + documentLink + '"></a>');
                             setTimeout(function() {
-                              $('#urPdf').triggerClick();
-                              $('#urPdf').remove();
+                              var file = document.getElementById('urPdf');
+                              file.click();
+                              file.remove();
                             },100);
                         }
 							},
