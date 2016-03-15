@@ -261,7 +261,7 @@ Mts.formsData = {
 		htmlForMail.push('<span style="font-size: 12px; text-align: center; display: block;">Пожалуйста, не отвечайте на это письмо, оно было сформировано автоматически</span>');
 		var strHTML = encodeURIComponent(htmlForMail.join(''));
 		$('input.user-data').val(strHTML);
-      Mts.mailHTML = strHTML;
+      Mts.formsData.mailHTML = strHTML;
 		$('input.user-subject').val(encodeURIComponent('Список дел для ремонта'));
 	},
 
@@ -421,7 +421,7 @@ Mts.formsData = {
 							data: {
 								user_id: Mts.common.userId,
 								data: encodeURIComponent(localStorage.getItem('sessionData')),
-                        html: Mts.mailHTML,
+                        html: Mts.formsData.mailHTML
 							},
 							success: function(json) {
 								// console.log('success');
