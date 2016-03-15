@@ -43,12 +43,6 @@ Mts.common.init = function() {
 
 		});
 
-		// $(document).on('keyup', function(e){
-		// 	if($(e.target).is('input.text')) {
-		// 		alert(1);
-		// 	}
-		// });
-
 		$('.hall').addClass('selected');
 		setTimeout(function(){
 			$('.room-menu [data-room="Прихожая"]').click();
@@ -267,9 +261,13 @@ Mts.formsData = {
 		htmlForMail.push('<span style="font-size: 12px; text-align: center; display: block;">Пожалуйста, не отвечайте на это письмо, оно было сформировано автоматически</span>');
 		var strHTML = encodeURIComponent(htmlForMail.join(''));
 		$('input.user-data').val(strHTML);
+      htmlObject.mailHTML = strHTML;
 		$('input.user-subject').val(encodeURIComponent('Список дел для ремонта'));
 	},
 
+  mailHTML: false,
+
+  htmlObject.htmlObject();
 	checkItUp: function() {
 		$.ajax({
 			type: 'GET',
@@ -277,6 +275,7 @@ Mts.formsData = {
 			dataType: 'json',
 			success: function(json) {
 				Mts.common.userId = json.id;
+
 				if (json.is_logined)  {
 					if (localStorage.getItem('waitingToSave')) {
 						$.ajax({
@@ -285,7 +284,8 @@ Mts.formsData = {
 							dataType: 'json',
 							data: {
 								user_id: Mts.common.userId,
-								data: encodeURIComponent(localStorage.getItem('sessionData'))
+								data: encodeURIComponent(localStorage.getItem('sessionData')),
+                        html: t.htmlObject()
 							},
 							success: function(json) {
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
@@ -474,7 +474,6 @@ Mts.articles = {
 					} else if (room == 6) {
 						room = 'Детская'
 					};
-
 
 					articlesArray.push('<li class="article');
 					if(roomFilter == room){
