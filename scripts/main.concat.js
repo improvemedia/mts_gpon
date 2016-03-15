@@ -411,7 +411,7 @@ Mts.formsData = {
 				url: 'http://www.inmyroom.ru/my/profile.json',
 				dataType: 'json',
 				success: function(json) {
-                Mts.formsData.htmlObject()
+              Mts.formsData.htmlObject();
 					Mts.common.userId = json.id;
 					if (json.is_logined)  {
 						$.ajax({
