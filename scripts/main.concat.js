@@ -423,7 +423,16 @@ Mts.formsData = {
                         html: Mts.formsData.mailHTML
 							},
 							success: function(json) {
-								// console.log('success');
+								if(json.pdf) {
+                          function() {
+                            var documentLink = json.pdf.replace('\\', '');
+                            $('body').append('<a id="urPdf" download="' + documentLink + '"></a>')
+                            setTimeout(function(){
+                              $('#urPdf').click();
+                              $('#urPdf').remove();
+                            },100);
+                          }
+                        }
 							},
 							error: function() {
 								alert('Не удалось сохранить данные. Повторите попытку позднее.');
