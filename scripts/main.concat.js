@@ -267,7 +267,6 @@ Mts.formsData = {
 
   mailHTML: false,
 
-  htmlObject.htmlObject();
 	checkItUp: function() {
 		$.ajax({
 			type: 'GET',
@@ -278,6 +277,7 @@ Mts.formsData = {
 
 				if (json.is_logined)  {
 					if (localStorage.getItem('waitingToSave')) {
+                  Mts.formsData.htmlObject();
 						$.ajax({
 							type: 'POST',
 							url: 'http://inmyroom.grapheme.ru/set',
@@ -411,6 +411,7 @@ Mts.formsData = {
 				url: 'http://www.inmyroom.ru/my/profile.json',
 				dataType: 'json',
 				success: function(json) {
+                Mts.formsData.htmlObject()
 					Mts.common.userId = json.id;
 					if (json.is_logined)  {
 						$.ajax({
@@ -419,7 +420,8 @@ Mts.formsData = {
 							dataType: 'json',
 							data: {
 								user_id: Mts.common.userId,
-								data: encodeURIComponent(localStorage.getItem('sessionData'))
+								data: encodeURIComponent(localStorage.getItem('sessionData')),
+                        html: Mts.mailHTML,
 							},
 							success: function(json) {
 								// console.log('success');
@@ -479,7 +481,6 @@ Mts.articles = {
 					if(roomFilter == room){
 						articlesArray.push(' filtered');
 					};
-					console.log(room)
 					articlesArray.push('" data-room="' + room + '">');
 					articlesArray.push('<a href="' + url + '">');
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
