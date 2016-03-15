@@ -408,6 +408,7 @@ Mts.formsData = {
 		});
 
 		$('.toolbar .save').on('click', function() {
+      console.log(123);
         Mts.formsData.htmlObject();
 			$.ajax({
 				type: 'GET',
