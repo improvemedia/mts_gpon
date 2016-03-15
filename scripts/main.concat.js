@@ -285,7 +285,6 @@ Mts.formsData = {
 							data: {
 								user_id: Mts.common.userId,
 								data: encodeURIComponent(localStorage.getItem('sessionData')),
-                        html: t.htmlObject()
 							},
 							success: function(json) {
 								var localObject = JSON.parse(localStorage.getItem('sessionData'));
@@ -406,7 +405,6 @@ Mts.formsData = {
 		});
 
 		$('.toolbar .save').on('click', function() {
-        Mts.formsData.htmlObject();
 			$.ajax({
 				type: 'GET',
 				url: 'http://www.inmyroom.ru/my/profile.json',
