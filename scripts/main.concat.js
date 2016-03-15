@@ -261,9 +261,7 @@ Mts.formsData = {
 		htmlForMail.push('<span style="font-size: 12px; text-align: center; display: block;">Пожалуйста, не отвечайте на это письмо, оно было сформировано автоматически</span>');
 		var strHTML = encodeURIComponent(htmlForMail.join(''));
 		$('input.user-data').val(strHTML);
-    console.log(Mts.formsData.mailHTML);
       Mts.formsData.mailHTML = strHTML;
-      console.log(Mts.formsData.mailHTML);
 		$('input.user-subject').val(encodeURIComponent('Список дел для ремонта'));
 	},
 
@@ -408,7 +406,6 @@ Mts.formsData = {
 		});
 
 		$('.toolbar .save').on('click', function() {
-      console.log(123);
         Mts.formsData.htmlObject();
 			$.ajax({
 				type: 'GET',
@@ -417,6 +414,7 @@ Mts.formsData = {
 				success: function(json) {
 					Mts.common.userId = json.id;
 					if (json.is_logined)  {
+                  Mts.formsData.htmlObject();
 						$.ajax({
 							type: 'POST',
 							url: 'http://inmyroom.grapheme.ru/set',
