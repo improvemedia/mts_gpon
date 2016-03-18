@@ -90,17 +90,17 @@
         <div class="content">
             <h2 class="red">Выберите комнату</h2>
             <div class="flat-plan">
-                <div onclick="ga("send", "event", "plan", "hall");" data-room="Прихожая" class="room hall"><span>Прихожая</span>
+                <div onclick='ga("send", "event", "plan", "hall");' data-room="Прихожая" class="room hall"><span>Прихожая</span>
                 </div>
-                <div onclick='ga('send', 'event', 'plan', 'sittingroom');' data-room="Гостиная" class="room sittingroom"><span>Гостиная</span>
+                <div onclick='ga("send", "event", "plan", "sittingroom");' data-room="Гостиная" class="room sittingroom"><span>Гостиная</span>
                 </div>
-                <div onclick="_gaq.push(['click', 'plan', nursery'']);" data-room="Детская" class="room childrens-room"><span>Детская</span>
+                <div onclick='ga("send", "event", "plan", "nursery");' data-room="Детская" class="room childrens-room"><span>Детская</span>
                 </div>
-                <div onclick="_gaq.push(['click', 'plan', bathroom'']);" data-room="Ванная" class="room bathroom"><span>Ванная</span>
+                <div onclick='ga("send", "event", "plan", "bathroom");' data-room="Ванная" class="room bathroom"><span>Ванная</span>
                 </div>
-                <div onclick="_gaq.push(['click', 'plan', kitchen'']);" data-room="Кухня" class="room kitchen"><span>Кухня</span>
+                <div onclick='ga("send", "event", "plan", "kitchen");' data-room="Кухня" class="room kitchen"><span>Кухня</span>
                 </div>
-                <div onclick="_gaq.push(['click', 'plan', bedroom'']);" data-room="Спальня" class="room bedroom"><span>Спальня</span>
+                <div onclick='ga("send", "event", "plan", "bedroom");' data-room="Спальня" class="room bedroom"><span>Спальня</span>
                 </div>
             </div>
         </div>
@@ -108,17 +108,17 @@
     <div class="content-wrapper shadow-top">
         <div class="content">
             <ul class="room-menu">
-                <li data-room="Кухня"><a onclick="_gaq.push(['click', 'roomMenu', 'kitchen']);" href="#">Кухня</a>
+                <li data-room="Кухня"><a onclick='ga("send", "event", "plan", "kitchen");' href="#">Кухня</a>
                 </li>
-                <li data-room="Гостиная"><a onclick="_gaq.push(['click', 'roomMenu', 'sittingroom']);" href="#">Гостиная</a>
+                <li data-room="Гостиная"><a onclick='ga("send", "event", "plan", "sittingroom");' href="#">Гостиная</a>
                 </li>
-                <li data-room="Спальня"><a onclick="_gaq.push(['click', 'roomMenu', 'bedroom]);" href="#">Спальная комната</a>
+                <li data-room="Спальня"><a onclick='ga("send", "event", "plan", "bedroom");'  href="#">Спальная комната</a>
                 </li>
-                <li data-room="Ванная"><a onclick="_gaq.push(['click', 'roomMenu', 'bathroom']);" href="#">Ванная комната</a>
+                <li data-room="Ванная"><a onclick='ga("send", "event", "plan", "bathroom");' href="#">Ванная комната</a>
                 </li>
-                <li data-room="Прихожая"><a onclick="_gaq.push(['click', 'roomMenu', 'hall']);" href="#">Прихожая</a>
+                <li data-room="Прихожая"><a onclick='ga("send", "event", "plan", "hall");' href="#">Прихожая</a>
                 </li>
-                <li data-room="Детская"><a onclick="_gaq.push(['click', 'roomMenu', 'nursery']);" href="#">Детская</a>
+                <li data-room="Детская"><a onclick='ga("send", "event", "plan", "nursery");' href="#">Детская</a>
                 </li>
             </ul>
         </div>
@@ -1603,13 +1603,13 @@
     <div class="content-wrapper">
         <div class="content">
             <ul class="toolbar">
-                <li onclick="_gaq.push(['click', 'userAction, 'save']);" class="save"><i></i>
+                <li onclick='ga("send", "event", "userAction", "save");' class="save"><i></i>
                     <p>Сохранить</p>
                 </li>
-                <li onclick="_gaq.push(['click', 'userAction, 'print']);" class="print"><i></i>
+                <li onclick='ga("send", "event", "userAction", "print");' class="print"><i></i>
                     <p>Распечатать</p>
                 </li>
-                <li onclick="_gaq.push(['click', 'userAction, 'share']);" class="share"><i></i>
+                <li onclick='ga("send", "event", "userAction", "share");' class="share"><i></i>
                     <p>Поделиться</p>
                 </li>
             </ul>
@@ -1620,7 +1620,7 @@
             <div class="gpon-block">
                 <div class="project-name">
                     <h2>GPON – ваш персональный<br>оптический канал</h2>
-                    <p>Пропускная способность – до 1 Гбит/с!</p><a  onclick="_gaq.push(['click', 'userRedirect, 'product']);" target="_blank" href="http://gpon.mgts.ru/">Узнать о технологии</a>
+                    <p>Пропускная способность – до 1 Гбит/с!</p><a  onclick='ga("send", "event", "userRedirect", "product");' target="_blank" href="http://gpon.mgts.ru/">Узнать о технологии</a>
                     <div class="mts-logo"></div>
                 </div>
             </div>
@@ -1685,7 +1685,7 @@
                 </div>
                 <input name="html" type="hidden" class="user-data">
 					<input name="subject" type="hidden" class="user-subject">
-                <button  onclick="_gaq.push(['click', 'form, 'send']);" type="submit" class="disabled">Отправить</button>
+                <button   onclick='ga("send", "event", "form", "send");'  type="submit" class="disabled">Отправить</button>
             </form>
         </div>
     </div>
