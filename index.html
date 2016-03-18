@@ -90,9 +90,9 @@
         <div class="content">
             <h2 class="red">Выберите комнату</h2>
             <div class="flat-plan">
-                <div onclick="_gaq.push(['click', 'plan', 'hall']);" data-room="Прихожая" class="room hall"><span>Прихожая</span>
+                <div onclick="ga("send", "event", "plan", "hall");" data-room="Прихожая" class="room hall"><span>Прихожая</span>
                 </div>
-                <div onclick="_gaq.push(['click', 'plan', sittingroom'']);" data-room="Гостиная" class="room sittingroom"><span>Гостиная</span>
+                <div onclick='ga('send', 'event', 'plan', 'sittingroom');' data-room="Гостиная" class="room sittingroom"><span>Гостиная</span>
                 </div>
                 <div onclick="_gaq.push(['click', 'plan', nursery'']);" data-room="Детская" class="room childrens-room"><span>Детская</span>
                 </div>
