@@ -489,7 +489,7 @@ Mts.articles = {
 						articlesArray.push(' filtered');
 					};
 					articlesArray.push('" data-room="' + room + '">');
-					articlesArray.push('<a onclick='ga("send", "event", "userRedirect", "articles");'  href="' + url + '">');
+					articlesArray.push("<a onclick='ga("send", "event", "userRedirect", "articles");'  href="' + url + '">");
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
 					articlesArray.push('<span class="category">' + category + '</span>');
 					articlesArray.push('<p class="descrition">' + title + '</p></a></li>');
