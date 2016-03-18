@@ -489,13 +489,18 @@ Mts.articles = {
 						articlesArray.push(' filtered');
 					};
 					articlesArray.push('" data-room="' + room + '">');
-					articlesArray.push("<a onclick='ga("send", "event", "userRedirect", "articles");'  href="' + url + '">");
+					articlesArray.push("<a href="' + url + '">");
 					articlesArray.push('<div style="background-image: url(' + imageURL + ');" class="article-img"></div>');
 					articlesArray.push('<span class="category">' + category + '</span>');
 					articlesArray.push('<p class="descrition">' + title + '</p></a></li>');
 				});
 
 				$('.articles-list').html(articlesArray.join(''));
+
+            $(document).find('.articles-list a').each(function() {
+              $(this).attr('onclick', "'ga("send", "event", "userRedirect", "articles");'");
+            });
+
 				Mts.articles.showArticles();
 
 			},
