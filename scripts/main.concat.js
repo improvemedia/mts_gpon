@@ -29,6 +29,10 @@ Mts.common.init = function() {
 				$(this).parent().parent().find('.paragraph-description').toggleClass('shown');
 			};
 
+      $(document).on('click', '.article a', function(){
+        ga("send", "event", "userRedirect", "articles");
+      });
+
 			if (e.target.className == 'text') {
 					var userInput = $(this),
 							NewUserInput = userInput.clone().html();
@@ -496,10 +500,6 @@ Mts.articles = {
 				});
 
 				$('.articles-list').html(articlesArray.join(''));
-
-            $(document).find('.articles-list a').each(function() {
-              $(this).attr('onclick', "'ga("send", "event", "userRedirect", "articles");'");
-            });
 
 				Mts.articles.showArticles();
 
