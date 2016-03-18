@@ -108,17 +108,17 @@
     <div class="content-wrapper shadow-top">
         <div class="content">
             <ul class="room-menu">
-                <li data-room="Кухня"><a onclick='ga("send", "event", "plan", "kitchen");' href="#">Кухня</a>
+                <li data-room="Кухня"><a onclick='ga("send", "event", "roomMenu", "kitchen");' href="#">Кухня</a>
                 </li>
-                <li data-room="Гостиная"><a onclick='ga("send", "event", "plan", "sittingroom");' href="#">Гостиная</a>
+                <li data-room="Гостиная"><a onclick='ga("send", "event", "roomMenu", "sittingroom");' href="#">Гостиная</a>
                 </li>
-                <li data-room="Спальня"><a onclick='ga("send", "event", "plan", "bedroom");'  href="#">Спальная комната</a>
+                <li data-room="Спальня"><a onclick='ga("send", "event", "roomMenu", "bedroom");'  href="#">Спальная комната</a>
                 </li>
-                <li data-room="Ванная"><a onclick='ga("send", "event", "plan", "bathroom");' href="#">Ванная комната</a>
+                <li data-room="Ванная"><a onclick='ga("send", "event", "roomMenu", "bathroom");' href="#">Ванная комната</a>
                 </li>
-                <li data-room="Прихожая"><a onclick='ga("send", "event", "plan", "hall");' href="#">Прихожая</a>
+                <li data-room="Прихожая"><a onclick='ga("send", "event", "roomMenu", "hall");' href="#">Прихожая</a>
                 </li>
-                <li data-room="Детская"><a onclick='ga("send", "event", "plan", "nursery");' href="#">Детская</a>
+                <li data-room="Детская"><a onclick='ga("send", "event", "roomMenu", "nursery");' href="#">Детская</a>
                 </li>
             </ul>
         </div>
@@ -279,8 +279,8 @@
                             </div>
                             <div class="col-right">
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'tv']);" type="checkbox" class="checkbox">
-                                    <p>Настроить <span onclick="_gaq.push(['click', 'productName', 'tv']);" class="paragraph-toggler">интерактивное цифровое ТВ</span>
+                                    <input  onclick='ga("send", "event", "checkbox", "tv");' type="checkbox" class="checkbox">
+                                    <p>Настроить <span onclick='ga("send", "event", "productName", "tv");' class="paragraph-toggler">интерактивное цифровое ТВ</span>
                                     </p>
                                     <p class="paragraph-description">Более 230 телеканалов в превосходном
                                         <br> Качестве с системой индивидуального подбора и <a target="_blank" href="http://mgts.ru/home/tv/tariffs/" target="_blank">современная ТВ-приставка</a>
@@ -288,8 +288,8 @@
                                         <br> позволят телевизору работать по вашему расписанию. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'phone']);" type="checkbox" class="checkbox">
-                                    <p>Подключить <span onclick="_gaq.push(['click', 'productName', 'phone']);" class="paragraph-toggler">домашний телефон</span>
+                                    <input onclick='ga("send", "event", "checkbox", "phone");' type="checkbox" class="checkbox">
+                                    <p>Подключить <span onclick='ga("send", "event", "productName", "phone");' class="paragraph-toggler">домашний телефон</span>
                                     </p>
                                     <p class="paragraph-description">Современный телефон
                                         <br> на базе технологии <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
@@ -297,8 +297,8 @@
                                         <br> Красивый номер, межгород, цифровые функции.</p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'cctv']);" type="checkbox" class="checkbox">
-                                    <p>Установить <span  onclick="_gaq.push(['click', 'productName', 'cctv']);" class="paragraph-toggler">систему видеонаблюдения</span>
+                                    <input onclick='ga("send", "event", "checkbox", "cctv");' type="checkbox" class="checkbox">
+                                    <p>Установить <span onclick='ga("send", "event", "productName", "cctv");' class="paragraph-toggler">систему видеонаблюдения</span>
                                     </p>
                                     <p class="paragraph-description">Есть ли еда у домашнего питомца,
                                         <br> как трудятся строители в ваше отсутствие?
@@ -522,8 +522,8 @@
                             </div>
                             <div class="col-right">
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'cctv']);" type="checkbox" class="checkbox">
-                                    <p>Установить <span onclick="_gaq.push(['click', 'productName', 'cctv']);" class="paragraph-toggler">систему видеонаблюдения</span>
+                                    <input onclick='ga("send", "event", "checkbox", "cctv");'  type="checkbox" class="checkbox">
+                                    <p>Установить <span onclick='ga("send", "event", "productName", "cctv");'  class="paragraph-toggler">систему видеонаблюдения</span>
                                     </p>
                                     <p class="paragraph-description">Есть ли еда у домашнего питомца,
                                         <br> как трудятся строители в ваше отсутствие?
@@ -532,8 +532,8 @@
                                         <br> в режиме реального времени. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'tv']);" type="checkbox" class="checkbox">
-                                    <p>Настроить <span onclick="_gaq.push(['click', 'productName', 'tv']);" class="paragraph-toggler">интерактивное цифровое ТВ</span>
+                                    <input onclick='ga("send", "event", "checkbox", "tv");' type="checkbox" class="checkbox">
+                                    <p>Настроить <span onclick='ga("send", "event", "productName", "tv");' class="paragraph-toggler">интерактивное цифровое ТВ</span>
                                     </p>
                                     <p class="paragraph-description">Более 230 телеканалов в превосходном
                                         <br> Качестве с системой индивидуального подбора и <a target="_blank" href="http://mgts.ru/home/tv/tariffs/" target="_blank">современная ТВ-приставка</a>
@@ -541,8 +541,8 @@
                                         <br> позволят телевизору работать по вашему расписанию. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'gpon']);" type="checkbox" class="checkbox">
-                                    <p>Провести <span onclick="_gaq.push(['click', 'productName', 'gpon']);" class="paragraph-toggler">интернет</span>
+                                    <input onclick='ga("send", "event", "checkbox", "gpon");' type="checkbox" class="checkbox">
+                                    <p>Провести <span onclick='ga("send", "event", "productName", "gpon");' class="paragraph-toggler">интернет</span>
                                     </p>
                                     <p class="paragraph-description">Безлимитный доступ в Интернет
                                         <br> на скорости до 500 Мбит/с
@@ -551,8 +551,8 @@
                                         <br> в режиме реального времени. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'phone']);" type="checkbox" class="checkbox">
-                                    <p>Подключить <span  onclick="_gaq.push(['click', 'productName', 'phone']);" class="paragraph-toggler">домашний телефон</span>
+                                    <input onclick='ga("send", "event", "checkbox", "phone");' type="checkbox" type="checkbox" class="checkbox">
+                                    <p>Подключить <span onclick='ga("send", "event", "productName", "phone");'  class="paragraph-toggler">домашний телефон</span>
                                     </p>
                                     <p class="paragraph-description">Современный телефон
                                         <br> на базе технологии <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
@@ -769,8 +769,8 @@
                             </div>
                             <div class="col-right">
                                 <div class="form-row">
-                                    <input type="checkbox" class="checkbox">
-                                    <p>Настроить <span class="paragraph-toggler">интерактивное цифровое ТВ</span>
+                                    <input onclick='ga("send", "event", "checkbox", "tv");' type="checkbox" class="checkbox">
+                                    <p>Настроить <span onclick='ga("send", "event", "productName", "tv");' class="paragraph-toggler">интерактивное цифровое ТВ</span>
                                     </p>
                                     <p class="paragraph-description">Более 230 телеканалов в превосходном
                                         <br> Качестве с системой индивидуального подбора и <a target="_blank" href="http://mgts.ru/home/tv/tariffs/" target="_blank">современная ТВ-приставка</a>
@@ -778,8 +778,8 @@
                                         <br> позволят телевизору работать по вашему расписанию. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'tv']);" type="checkbox" class="checkbox">
-                                    <p>Провести <span onclick="_gaq.push(['click', 'productName', 'tv']);" class="paragraph-toggler">интернет</span>
+                                    <input onclick='ga("send", "event", "checkbox", "gpon");' type="checkbox" class="checkbox">
+                                    <p>Провести <span onclick='ga("send", "event", "productName", "gpon");' class="paragraph-toggler">интернет</span>
                                     </p>
                                     <p class="paragraph-description">Безлимитный доступ в Интернет
                                         <br> на скорости до 500 Мбит/с
@@ -788,8 +788,8 @@
                                         <br> в режиме реального времени. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'phone']);" type="checkbox" class="checkbox">
-                                    <p>Подключить <span onclick="_gaq.push(['click', 'productName', 'phone']);" class="paragraph-toggler">домашний телефон</span>
+                                    <input onclick='ga("send", "event", "checkbox", "phone");' type="checkbox" class="checkbox">
+                                    <p>Подключить <span onclick='ga("send", "event", "productName", "phone");' class="paragraph-toggler">домашний телефон</span>
                                     </p>
                                     <p class="paragraph-description">Современный телефон
                                         <br> на базе технологии <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
@@ -1200,8 +1200,8 @@
                             </div>
                             <div class="col-right">
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'signaling']);" type="checkbox" class="checkbox">
-                                    <p>Защитить квартиру <span onclick="_gaq.push(['click', 'productName', 'signaling']);" class="paragraph-toggler">охранной сигнализацией</span>
+                                    <input  onclick='ga("send", "event", "checkbox", "signaling");'  type="checkbox" class="checkbox">
+                                    <p>Защитить квартиру <span onclick='ga("send", "event", "productName", "signaling");' class="paragraph-toggler">охранной сигнализацией</span>
                                     </p>
                                     <p class="paragraph-description">Персональная <a target="_blank" href="http://mgts.ru/home/os/" target="_blank">охранная сигнализация</a>
                                         <br> – проверенное и эффективное решение
@@ -1210,8 +1210,8 @@
                                         <br> тревожных сигналов и надежное техническое обслуживание. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'cctv']);" type="checkbox" class="checkbox">
-                                    <p>Установить <span onclick="_gaq.push(['click', 'productName', 'cctv']);" class="paragraph-toggler">систему видеонаблюдения</span>
+                                    <input onclick='ga("send", "event", "checkbox", "cctv");' type="checkbox" class="checkbox">
+                                    <p>Установить <span onclick='ga("send", "event", "productName", "cctv");' class="paragraph-toggler">систему видеонаблюдения</span>
                                     </p>
                                     <p class="paragraph-description">Есть ли еда у домашнего питомца,
                                         <br> как трудятся строители в ваше отсутствие?
@@ -1220,8 +1220,8 @@
                                         <br> в режиме реального времени. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'phone']);" type="checkbox" class="checkbox">
-                                    <p>Подключить <span onclick="_gaq.push(['click', 'productName', 'phone']);" class="paragraph-toggler">домашний телефон</span>
+                                    <input onclick='ga("send", "event", "checkbox", "phone");' type="checkbox" class="checkbox">
+                                    <p>Подключить <span onclick='ga("send", "event", "productName", "phone");' class="paragraph-toggler">домашний телефон</span>
                                     </p>
                                     <p class="paragraph-description">Современный телефон
                                         <br> на базе технологии <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
@@ -1229,8 +1229,8 @@
                                         <br> Красивый номер, межгород, цифровые функции.</p>
                                 </div>
                                 <div class="form-row">
-                                    <input onclick="_gaq.push(['click', 'checkbox', 'gpon']);" type="checkbox" class="checkbox">
-                                    <p>Установить <span onclick="_gaq.push(['click', 'productName', 'gpon']);" class="paragraph-toggler">абонентское устройство GPON <br>
+                                    <input onclick='ga("send", "event", "checkbox", "gpon");' type="checkbox" class="checkbox">
+                                    <p>Установить <span onclick='ga("send", "event", "productName", "gpon");' class="paragraph-toggler">абонентское устройство GPON <br>
 со встроенным Wi-F</span>
                                     </p>
                                     <p class="paragraph-description">Технология <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
@@ -1448,8 +1448,8 @@
                             </div>
                             <div class="col-right">
                                 <div class="form-row">
-                                    <input type="checkbox" class="checkbox">
-                                    <p>Установить <span class="paragraph-toggler">систему видеонаблюдения</span>
+                                    <input onclick='ga("send", "event", "checkbox", "cctv");' type="checkbox" class="checkbox">
+                                    <p>Установить <span onclick='ga("send", "event", "productName", "cctv");' class="paragraph-toggler">систему видеонаблюдения</span>
                                     </p>
                                     <p class="paragraph-description">Есть ли еда у домашнего питомца,
                                         <br> как трудятся строители в ваше отсутствие?
@@ -1458,8 +1458,8 @@
                                         <br> в режиме реального времени.</p>
                                 </div>
                                 <div class="form-row">
-                                    <input type="checkbox" class="checkbox">
-                                    <p>Провести <span class="paragraph-toggler">интернет</span>
+                                    <input onclick='ga("send", "event", "checkbox", "gpon");' type="checkbox" class="checkbox">
+                                    <p>Провести <span onclick='ga("send", "event", "productName", "gpon");' class="paragraph-toggler">интернет</span>
                                     </p>
                                     <p class="paragraph-description">Безлимитный доступ в Интернет
                                         <br> на скорости до 500 Мбит/с
@@ -1468,8 +1468,8 @@
                                         <br> в режиме реального времени.</p>
                                 </div>
                                 <div class="form-row">
-                                    <input type="checkbox" class="checkbox">
-                                    <p>Настроить <span class="paragraph-toggler">интерактивное цифровое ТВ</span>
+                                    <input onclick='ga("send", "event", "checkbox", "tv");' type="checkbox" class="checkbox">
+                                    <p>Настроить <span onclick='ga("send", "event", "productName", "tv");' class="paragraph-toggler">интерактивное цифровое ТВ</span>
                                     </p>
                                     <p class="paragraph-description">Более 230 телеканалов в превосходном
                                         <br> Качестве с системой индивидуального подбора и <a target="_blank" href="http://mgts.ru/home/tv/tariffs/" target="_blank">современная ТВ-приставка</a>
@@ -1477,8 +1477,8 @@
                                         <br> позволят телевизору работать по вашему расписанию. </p>
                                 </div>
                                 <div class="form-row">
-                                    <input type="checkbox" class="checkbox">
-                                    <p>Подключить <span class="paragraph-toggler">домашний телефон</span>
+                                    <input onclick='ga("send", "event", "checkbox", "phone");' type="checkbox" class="checkbox">
+                                    <p>Подключить <span onclick='ga("send", "event", "productName", "phone");' class="paragraph-toggler">домашний телефон</span>
                                     </p>
                                     <p class="paragraph-description">Современный телефон
                                         <br> на базе технологии <a target="_blank" href="http://mgts.ru/home/phone/" target="_blank">GPON</a>
