@@ -1097,9 +1097,25 @@ footer {
   height: 120px; }
   footer .content {
     height: 120px;
-    background-image: url("../images/logo-footer.png");
     background-repeat: no-repeat;
     background-position: left center; }
+    footer .content .mts-logo {
+      margin-top: 40px;
+      float: left;
+      width: 122px;
+      height: 43px;
+      margin-right: 40px;
+      display: block;
+      text-decoration: none;
+      background-image: url("../images/logo-footer-mts.png");}
+    footer .content .mgts-logo {
+      margin-top: 40px;
+      float: left;
+      width: 139px;
+      height: 43px;
+      display: block;
+      text-decoration: none;
+      background-image: url("../images/logo-footer-mgts.png");}
     footer .content .ya-share2 {
       float: right;
       margin: 50px 35px 0 0; }
